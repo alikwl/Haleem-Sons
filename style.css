@@ -134,11 +134,15 @@ ul { list-style: none; }
 /* ═══════════════════════════════════════════
    Language Switcher
    ═══════════════════════════════════════════ */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 101;
+}
+
 .language-switcher {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 1001;
+    position: relative;
     display: flex;
     gap: 4px;
     background: rgba(255,255,255,0.95);
@@ -146,13 +150,8 @@ ul { list-style: none; }
     -webkit-backdrop-filter: blur(12px);
     padding: 4px;
     border-radius: 100px;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     border: 1px solid var(--clr-border);
-}
-
-body.urdu .language-switcher {
-    left: 16px;
-    right: auto;
 }
 
 .lang-btn {
@@ -1306,15 +1305,14 @@ body.urdu .gallery-zoom {
     /* Footer */
     .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 
-    /* Language Switcher */
+    /* Language Switcher spacing on mobile */
     .language-switcher {
-        top: 10px;
-        right: 10px;
+        padding: 2px;
     }
 
-    body.urdu .language-switcher {
-        left: 10px;
-        right: auto;
+    .lang-btn {
+        padding: 4px 10px;
+        font-size: 0.72rem;
     }
 
     /* WhatsApp */
