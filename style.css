@@ -39,6 +39,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -50,7 +55,6 @@ body {
     line-height: 1.7;
     background: var(--clr-surface);
     direction: ltr;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -1230,7 +1234,7 @@ body.urdu .gallery-zoom {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 280px;
         height: 100vh;
         background: var(--clr-surface);
@@ -1238,22 +1242,24 @@ body.urdu .gallery-zoom {
         padding: 80px 32px 32px;
         gap: 4px;
         box-shadow: var(--shadow-xl);
-        transition: right var(--transition);
+        transform: translateX(100%);
+        transition: transform var(--transition);
         z-index: 100;
     }
 
     body.urdu .nav-links {
         right: auto;
-        left: -100%;
-        transition: left var(--transition);
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform var(--transition);
     }
 
     .nav-links.open {
-        right: 0;
+        transform: translateX(0);
     }
 
     body.urdu .nav-links.open {
-        left: 0;
+        transform: translateX(0);
     }
 
     .nav-link {
